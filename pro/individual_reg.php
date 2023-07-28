@@ -17,10 +17,10 @@ if (isset($_POST['name'])) {
     $cpassword = $_POST['cpassword'];
     $password = $_POST['password'];
     if (!isset($name, $address, $phone, $email, $password, $cpassword) || ($password != $cpassword)) { ?>
-<script>
-alert("Ensure you fill the form properly.");
-</script>
-<?php
+        <script>
+            alert("Ensure you fill the form properly.");
+        </script>
+        <?php
     } else {
         //Check if email exists
         $check_email = $conn->prepare("SELECT * FROM passenger WHERE email = ? OR phone = ?");
@@ -30,16 +30,16 @@ alert("Ensure you fill the form properly.");
         $res = $check_email->num_rows();
         if ($res) {
         ?>
-<script>
-alert("Email already exists!");
-</script>
-<?php
+            <script>
+                alert("Email already exists!");
+            </script>
+        <?php
 
         } elseif ($cpassword != $password) { ?>
-<script>
-alert("Password does not match.");
-</script>
-<?php
+            <script>
+                alert("Password does not match.");
+            </script>
+            <?php
         } else {
             //Insert
             $password = md5($password);
@@ -53,16 +53,16 @@ alert("Password does not match.");
             $stmt->bind_param("ssssss", $name, $email, $password, $phone, $address, $loc);
             if ($stmt->execute()) {
             ?>
-<script>
-alert("Congratulations.\nYou are now registered.");
-window.location = 'signin.php';
-</script>
-<?php
+                <script>
+                    alert("Congratulations.\nYou are now registered.");
+                    window.location = 'signin.php';
+                </script>
+            <?php
             } else {
             ?>
-<script>
-alert("We could not register you!.");
-</script>
+                <script>
+                    alert("We could not register you!.");
+                </script>
 <?php
             }
         }
@@ -77,8 +77,7 @@ alert("We could not register you!.");
             <marquee behavior="" scrollamount="2" direction="">You need to create an account to book/view Buses!
             </marquee>
         </p>
-        <form class="login-form" method="post" role="form" enctype="multipart/form-data" id="signup-form"
-            autocomplete="off">
+        <form class="login-form" method="post" role="form" enctype="multipart/form-data" id="signup-form" autocomplete="off">
             <!-- json response will be here -->
             <div id="errorDiv"></div>
             <!-- json response will be here -->
@@ -92,7 +91,7 @@ alert("We could not register you!.");
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Contact Number</label>
-                    <input type="text" minlength="11" pattern="[0-9]{11}" required name="phone">
+                    <input type="text" minlength="11" pattern="[0-9]{10}" required name="phone">
                 </div>
             </div>
             <div class="col-md-6">
