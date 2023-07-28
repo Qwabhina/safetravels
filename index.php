@@ -11,6 +11,10 @@ include 'constants.php';
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo @$title; ?></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
 
     <!-- [ FONT-AWESOME ICON ] 
@@ -95,8 +99,7 @@ include 'constants.php';
 
                 <div class="navbar-header">
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
                         <span class="sr-only">Toggle navigation</span>
 
@@ -128,7 +131,7 @@ include 'constants.php';
                                 <h3>About</h3>
                             </a></li>
 
-                        
+
 
                         <li><a href="pro/signin.php" class="page-scroll">
                                 <h3>Passenger Portal</h3>
@@ -167,18 +170,17 @@ include 'constants.php';
 
                         <div class="main-heading-content col-md-12 col-sm-12 text-center">
 
-                            <h1 class="main-heading-title"><span class="main-element themecolor"
-                                    data-elements=" Blue, Bus Ticket, Blue Bus"></span></h1>
+                            <h1 class="main-heading-title"><span class="main-element themecolor" data-elements=" Blue, Bus Ticket, Blue Bus"></span></h1>
 
-                            <h1 class="main-heading-title"><span class="main-element themecolor"
-                                    data-elements=" Reservation System, Reservation System, Reservation System"></span>
+                            <h1 class="main-heading-title"><span class="main-element themecolor" data-elements=" Reservation System, Reservation System, Reservation System"></span>
                             </h1>
 
                             <p class="main-heading-text">WELCOME TO,<br />Blue Bus </p>
 
                             <div class="btn-bar">
 
-                                <a href="pro/signin.php" class="btn btn-custom theme_background_color">Make Reservations Now</a>
+                                <a href="pro/signin.php" class="btn btn-custom theme_background_color">Make Reservations
+                                    Now</a>
 
                             </div>
 
@@ -206,8 +208,8 @@ include 'constants.php';
                             <h1 class="main-heading-title">Blue Bus Co. Contact List</h1>
 
                             <p class="main-heading-text">The Blue Bus Reservation System
-                                
-     
+
+
                                 <br />Devloped By Uzair and Asif
                             </p>
 
@@ -251,7 +253,7 @@ include 'constants.php';
 
                         <h3 class="title">ABOUT <span class="themecolor">US</span></h3>
 
-                        
+
 
                     </div>
 
@@ -333,7 +335,8 @@ include 'constants.php';
 
                     </div>
 
-                    <div class="col-md-4"> <small>&copy; <?php echo date('Y'); ?>, Developed By Uzair and Asif </small></div>
+                    <div class="col-md-4"> <small>&copy; <?php echo date('Y'); ?>, Developed By Uzair and Asif </small>
+                    </div>
 
                     <div class="col-md-4">
 

@@ -21,6 +21,10 @@ if (isset($_GET['error'])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title><?php echo SITE_NAME, ' - Passenger\'s Account' ?> </title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     <script src="../js/alpine.js"></script>
     <!-- Font Awesome Icons -->
@@ -76,12 +80,11 @@ if (isset($_GET['error'])) {
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                            <a href="individual.php" class="nav-link <?php echo (@$_GET['page'] == '') ? 'active' : '';?>">
+                            <a href="individual.php" class="nav-link <?php echo (@$_GET['page'] == '') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Home
@@ -89,22 +92,22 @@ if (isset($_GET['error'])) {
                             </a>
 
                         </li>
-                        
+
 
                         <li class="nav-item">
-                            <a href="individual.php?page=reg" class="nav-link <?php echo (@$_GET['page'] == 'reg') ? 'active' : '';?>">
+                            <a href="individual.php?page=reg" class="nav-link <?php echo (@$_GET['page'] == 'reg') ? 'active' : ''; ?>">
                                 <i class="fa fa-plus nav-icon"></i>
                                 <p>New Booking</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="individual.php?page=paid" class="nav-link <?php echo (@$_GET['page'] == 'paid') ? 'active' : '';?>">
+                            <a href="individual.php?page=paid" class="nav-link <?php echo (@$_GET['page'] == 'paid') ? 'active' : ''; ?>">
                                 <i class="fa fa-book nav-icon"></i>
                                 <p>View Bookings</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="individual.php?page=feedback" class="nav-link <?php echo (@$_GET['page'] == 'feedback') ? 'active' : '';?>">
+                            <a href="individual.php?page=feedback" class="nav-link <?php echo (@$_GET['page'] == 'feedback') ? 'active' : ''; ?>">
                                 <i class="fa fa-mail-bulk nav-icon"></i>
                                 <p>Feedback</p>
                             </a>
@@ -207,9 +210,9 @@ if (isset($_GET['error'])) {
     <script src="dist/js/pages/dashboard3.js"></script>
 
     <script>
-    $(function() {
-        $("#example1").DataTable();
-    });
+        $(function() {
+            $("#example1").DataTable();
+        });
     </script>
 </body>
 
