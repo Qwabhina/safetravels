@@ -15,16 +15,16 @@ require_once 'PHPMailer/src/SMTP.php';
 include_once 'config.php';
 
 define("SITE_NAME", $title);
-date_default_timezone_set("Africa/Lagos");
+date_default_timezone_set("Africa/Accra");
 $date = date('D, d-M-Y h:i:s A');;
 $date_small = date('d-M-Y');;
 //INSERT YOUR OWN PAYSTACK API KEYS
-$paystack = "#YOUR_API_KEY"; //Do not change this! Redirect URL http://localhost/train/pro/verify.php
+$paystack = "#sk_test_3647ffe292919befb3c7b681cc07fb66859b3889"; //Do not change this! Redirect URL http://localhost/train/pro/verify.php
 if (!function_exists('connect')) {
 
     function connect()
     {
-        $con = new mysqli("localhost", "root", "", "otrsphp");
+    $con = new mysqli("localhost", "root", "", "safetravels");
         if (!$con) die("Database is being upgraded!");
         return $con;
     }
@@ -808,29 +808,29 @@ function printReport($id)
         }
     }
 
-    class MYPDF extends TCPDF
-    {
-        //Page header
-        public function Header()
-        {
-            // get the current page break margin
-            $bMargin = $this->getBreakMargin();
-            // get current auto-page-break mode
-            $auto_page_break = $this->AutoPageBreak;
-            // disable auto-page-break
-            $this->SetAutoPageBreak(false, 0);
-            // set bacground image
-            $img_file = K_PATH_IMAGES . "watermark.jpg";
-            // die($img_file);
-            $this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
-            $this->SetAlpha(0.5);
+    // class MYPDF extends TCPDF
+    // {
+    //     //Page header
+    //     public function Header()
+    //     {
+    //         // get the current page break margin
+    //         $bMargin = $this->getBreakMargin();
+    //         // get current auto-page-break mode
+    //         $auto_page_break = $this->AutoPageBreak;
+    //         // disable auto-page-break
+    //         $this->SetAutoPageBreak(false, 0);
+    //         // set bacground image
+    //         $img_file = K_PATH_IMAGES . "watermark.jpg";
+    //         // die($img_file);
+    //         $this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
+    //         $this->SetAlpha(0.5);
 
-            // restore auto-page-break status
-            $this->SetAutoPageBreak($auto_page_break, $bMargin);
-            // set the starting point for the page content
-            $this->setPageMark();
-        }
-    }
+    //         // restore auto-page-break status
+    //         $this->SetAutoPageBreak($auto_page_break, $bMargin);
+    //         // set the starting point for the page content
+    //         $this->setPageMark();
+    //     }
+    // }
     $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     // $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, $pageLayout, true, 'UTF-8', false);
     // set document information
