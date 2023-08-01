@@ -16,19 +16,21 @@ include_once 'config.php';
 
 define("SITE_NAME", $title);
 date_default_timezone_set("Africa/Accra");
-$date = date('D, d-M-Y h:i:s A');;
-$date_small = date('d-M-Y');;
-//INSERT YOUR OWN PAYSTACK API KEYS
-$paystack = "#sk_test_3647ffe292919befb3c7b681cc07fb66859b3889"; //Do not change this! Redirect URL http://localhost/train/pro/verify.php
-if (!function_exists('connect')) {
+$date = date('D, d-M-Y h:i:s A');
+$date_small = date('d-M-Y');
 
-    function connect()
-    {
-    $con = new mysqli("localhost", "root", "", "safetravels");
-        if (!$con) die("Database is being upgraded!");
-        return $con;
-    }
-}
+//INSERT YOUR OWN PAYSTACK API KEYS
+// $paystack = "sk_test_3647ffe292919befb3c7b681cc07fb66859b3889"; //Do not change this! Redirect URL http://localhost/train/pro/verify.php
+
+// if (!function_exists('connect')) {
+
+//     function connect()
+//     {
+//         $con = new mysqli("localhost", "root", "", "otrsphp");
+//         if (!$con) die("Database is being upgraded!");
+//         return $con;
+//     }
+// }
 
 
 function sendMail($to, $subject, $msg)

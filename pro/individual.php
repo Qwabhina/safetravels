@@ -7,7 +7,7 @@ include '../constants.php';
 if (@$_GET['page'] == 'print' && isset($_GET['print'])) printClearance($_GET['print']);
 $fullname =  getIndividualName($_SESSION['user_id'], $conn);
 if (isset($_GET['error'])) {
-    echo "<script>alert('Payment could not be initialized! Network Error!'); window.location = 'individual.php?page=reg';</script>";
+    echo "<script>alert('Payment could not be initialized!<br>" . $_GET['error'] . "'); window.location = 'individual.php?page=reg';</script>";
     exit;
 }
 ?>

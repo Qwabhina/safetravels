@@ -28,7 +28,7 @@ if (isset($_GET['reference'])) {
     CURLOPT_SSL_VERIFYPEER => 0,
     CURLOPT_HTTPHEADER => [
       "accept: application/json",
-      "authorization: Bearer $paystack",
+      "authorization: Bearer sk_test_3647ffe292919befb3c7b681cc07fb66859b3889",
       "cache-control: no-cache"
     ],
   ));
@@ -57,6 +57,7 @@ if (isset($_GET['reference'])) {
       if ($payment_id > 0) {
 
         $conn->query("INSERT INTO booked (payment_id, schedule_id, user_id, code, class, no, date, seat) VALUES ('$payment_id','$schedule_id', '$user_id', '$code', '$class', '$number', '$date' , '$seat')");
+        
         unset($_SESSION['discount']);
         unset($_SESSION['amount']);
         unset($_SESSION['original']);

@@ -23,6 +23,8 @@
     CURLOPT_POSTFIELDS => json_encode([
       'amount' => $amount,
       'email' => $email,
+    'currency' => 'USD',
+    'callback_url' => 'http://www.safetravels.com/pro/verify.php'
     ]),
     CURLOPT_HTTPHEADER => [
     "authorization: Bearer sk_test_3647ffe292919befb3c7b681cc07fb66859b3889", //replace this with your own test key
@@ -30,6 +32,9 @@
       "cache-control: no-cache"
     ],
   ));
+
+//So that curl_exec returns the contents of the cURL; rather than echoing it
+curl_setopt($pay, CURLOPT_RETURNTRANSFER, true); 
 
   $response = curl_exec($pay);
   $err = curl_error($pay);
@@ -39,8 +44,8 @@
   }
   $tranx = json_decode($response);
   if (!$tranx->status or empty($tranx->status)) {
-    // there was an error from the API
-    header("Location: individual.php?page=pay&error=payment&access=1");
+  // there was an error from the API
+  header("Location: individual.php?page=pay&error=" . $tranx->error . "&access=1");
     exit();
   }
 

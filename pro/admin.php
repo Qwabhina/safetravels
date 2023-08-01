@@ -77,8 +77,7 @@ $fullname =  "System Administrator";
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -133,7 +132,7 @@ $fullname =  "System Administrator";
                                                                                 ?>">
                                 <i class="nav-icon fas fa-train"></i>
                                 <p>
-                                    Trains 
+                                    Trains
                                 </p>
                             </a>
                         </li>
@@ -286,26 +285,26 @@ $fullname =  "System Administrator";
     <script src="dist/js/pages/dashboard3.js"></script>
 
     <script>
-    $(function() {
-        $("#example1").DataTable();
-    });
+        $(function() {
+            $("#example1").DataTable();
+        });
     </script>
     <?php if (@$_GET['page'] == 'query') { ?>
-    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+        <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- Sparkline -->
+        <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
 
-    <!-- page script -->
-    <script>
-    $(function() {
-        /* jQueryKnob */
+        <!-- page script -->
+        <script>
+            $(function() {
+                /* jQueryKnob */
 
-        $('.knob').knob({
-            draw: function() {}
-        })
+                $('.knob').knob({
+                    draw: function() {}
+                })
 
-    })
-    </script>
+            })
+        </script>
     <?php } ?>
 
 </body>
